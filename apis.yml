@@ -1,7 +1,28 @@
 aid: automotus
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/automotus.png
 name: Automotus
-description: Automotus is a company surfaced as a portfolio company of techstars and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Automotus is a smart-city and urban-mobility technology company that provides
+  automated curb management using computer vision. Its CurbSight AI cameras use
+  automatic license plate recognition (ALPR), 5G connectivity, edge processing,
+  and privacy-by-design to monitor curb activity, while CurbPass handles curb
+  access payment and invoicing and CurbSuite delivers an enforcement and
+  analytics dashboard. Automotus works with cities, airports, and commercial
+  fleets to reduce congestion, improve safety and compliance, cut emissions, and
+  generate new curb revenue. It was surfaced as a Techstars portfolio company and
+  added to the API Evangelist network for enrichment; no public developer/API
+  surface has been found yet.
 url: https://raw.githubusercontent.com/api-evangelist/automotus/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +32,16 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
+- Smart Cities
+- Urban Mobility
+- Curb Management
+- Computer Vision
+- Transportation
+- Parking
+- Enforcement
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -21,5 +49,30 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/automotus-domain-security.yml
+- type: MCPServer
+  url: mcp/automotus-mcp.yml
+- type: LLMsTxt
+  url: llms/automotus-llms.txt
 - type: Website
-  url: https://automotus.co/
+  url: https://www.automotus.ai/
+- type: Blog
+  url: https://www.automotus.co/company-news-insights/
+- type: Support
+  url: https://curbpasshelp.zendesk.com/hc/en-us
+- type: SignUp
+  url: https://www.curbpass.io/login
+- type: Login
+  url: https://www.curbsuite.io/login
+- type: TermsOfService
+  url: https://www.automotus.ai/terms-of-use
+- type: PrivacyPolicy
+  url: https://www.automotus.ai/privacypolicy
+- type: Contact
+  url: https://www.automotus.ai/contact
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
