@@ -2,12 +2,10 @@ generated: '2026-07-18'
 method: searched
 status: published
 source: https://www.automotus.ai/llms.txt
-notes: >-
-  Automotus publishes a Wix Site MCP endpoint (the site is built on Wix, which
-  provides a hosted Model Context Protocol server for agentic access to public
-  site content). The tool list below is the standard Wix Site MCP toolset as
-  advertised on https://www.automotus.ai/llms.txt. No authentication is required
-  to connect; only public site information is exposed.
+notes: Automotus publishes a Wix Site MCP endpoint (the site is built on Wix, which provides a hosted
+  Model Context Protocol server for agentic access to public site content). The tool list below is the
+  standard Wix Site MCP toolset as advertised on https://www.automotus.ai/llms.txt. No authentication
+  is required to connect; only public site information is exposed.
 server:
   name: automotus
   vendor: Wix Site MCP
@@ -24,14 +22,17 @@ tools:
   - name: searchTerm
     description: The term to search for in the site.
 - name: SearchSiteApiDocs
-  description: Retrieves the API documentation for the Wix business solutions installed on this site and informs the AI client how to use the APIs.
+  description: Retrieves the API documentation for the Wix business solutions installed on this site and
+    informs the AI client how to use the APIs.
   parameters:
   - name: searchTerm
     description: The term to search for in the site API documentation.
 - name: GenerateVisitorToken
-  description: Creates a new visitor session and obtains a visitor access token for the site. Must be called before any CallWixSiteAPI request if no visitor token is available.
+  description: Creates a new visitor session and obtains a visitor access token for the site. Must be
+    called before any CallWixSiteAPI request if no visitor token is available.
 - name: CallWixSiteAPI
-  description: Calls API methods on the site to perform actions on a visitor's behalf, such as querying site data, booking an appointment, or starting a purchase.
+  description: Calls API methods on the site to perform actions on a visitor's behalf, such as querying
+    site data, booking an appointment, or starting a purchase.
   parameters:
   - name: visitorToken
     description: Visitor access token. Use GenerateVisitorToken first if not available.
@@ -47,7 +48,16 @@ tools:
   - name: articleUrl
     description: URL of an article in the Wix developer documentation portal.
 - name: ReadFullDocsMethodSchema
-  description: Fetches the full schema for a Wix API method. Should be called before calling the method via CallWixSiteAPI.
+  description: Fetches the full schema for a Wix API method. Should be called before calling the method
+    via CallWixSiteAPI.
   parameters:
   - name: articleUrl
     description: URL of the reference article for the Wix API method.
+deployment:
+  mode: remote
+  endpoint: https://www.automotus.ai/_api/mcp
+  verified: probed
+  probe: live
+  tools: 9
+  checked: '2026-08-12'
+  source: catalog MCP census
